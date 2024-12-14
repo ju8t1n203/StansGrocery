@@ -42,8 +42,8 @@ Partial Class MainForm
         Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.DisplayLabel = New System.Windows.Forms.Label()
         Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
-        Me.FilterbyAisleRadioButton = New System.Windows.Forms.RadioButton()
         Me.FilterbyCategoryRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FilterbyAisleRadioButton = New System.Windows.Forms.RadioButton()
         Me.TopMenuStrip.SuspendLayout()
         Me.ContextMenuStrip.SuspendLayout()
         Me.FilterGroupBox.SuspendLayout()
@@ -51,14 +51,14 @@ Partial Class MainForm
         '
         'SplashTimer
         '
-        Me.SplashTimer.Interval = 3000
+        Me.SplashTimer.Interval = 300
         '
         'TopMenuStrip
         '
         Me.TopMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.TopMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.TopMenuStrip.Name = "TopMenuStrip"
-        Me.TopMenuStrip.Size = New System.Drawing.Size(800, 24)
+        Me.TopMenuStrip.Size = New System.Drawing.Size(469, 24)
         Me.TopMenuStrip.TabIndex = 0
         Me.TopMenuStrip.Text = "TopMenuStrip"
         '
@@ -114,15 +114,15 @@ Partial Class MainForm
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(103, 53)
+        Me.SearchTextBox.Location = New System.Drawing.Point(231, 29)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.SearchTextBox.TabIndex = 1
+        Me.SearchTextBox.TabIndex = 2
         '
         'SearchLabel
         '
         Me.SearchLabel.AutoSize = True
-        Me.SearchLabel.Location = New System.Drawing.Point(56, 56)
+        Me.SearchLabel.Location = New System.Drawing.Point(184, 32)
         Me.SearchLabel.Name = "SearchLabel"
         Me.SearchLabel.Size = New System.Drawing.Size(41, 13)
         Me.SearchLabel.TabIndex = 2
@@ -130,16 +130,17 @@ Partial Class MainForm
         '
         'FilterComboBox
         '
+        Me.FilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FilterComboBox.FormattingEnabled = True
-        Me.FilterComboBox.Location = New System.Drawing.Point(276, 53)
+        Me.FilterComboBox.Location = New System.Drawing.Point(42, 111)
         Me.FilterComboBox.Name = "FilterComboBox"
-        Me.FilterComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.FilterComboBox.TabIndex = 3
+        Me.FilterComboBox.Size = New System.Drawing.Size(136, 21)
+        Me.FilterComboBox.TabIndex = 1
         '
         'FilterLabel
         '
         Me.FilterLabel.AutoSize = True
-        Me.FilterLabel.Location = New System.Drawing.Point(241, 56)
+        Me.FilterLabel.Location = New System.Drawing.Point(7, 114)
         Me.FilterLabel.Name = "FilterLabel"
         Me.FilterLabel.Size = New System.Drawing.Size(29, 13)
         Me.FilterLabel.TabIndex = 4
@@ -147,39 +148,51 @@ Partial Class MainForm
         '
         'SearchButton
         '
-        Me.SearchButton.Location = New System.Drawing.Point(103, 79)
+        Me.SearchButton.Location = New System.Drawing.Point(187, 108)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(100, 35)
-        Me.SearchButton.TabIndex = 5
+        Me.SearchButton.Size = New System.Drawing.Size(144, 35)
+        Me.SearchButton.TabIndex = 3
         Me.SearchButton.Text = "Accept"
         Me.SearchButton.UseVisualStyleBackColor = True
         '
         'DisplayListBox
         '
         Me.DisplayListBox.FormattingEnabled = True
-        Me.DisplayListBox.Location = New System.Drawing.Point(403, 53)
+        Me.DisplayListBox.Location = New System.Drawing.Point(337, 29)
         Me.DisplayListBox.Name = "DisplayListBox"
         Me.DisplayListBox.Size = New System.Drawing.Size(120, 95)
         Me.DisplayListBox.TabIndex = 6
+        Me.DisplayListBox.TabStop = False
         '
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(400, 151)
+        Me.DisplayLabel.Location = New System.Drawing.Point(334, 127)
         Me.DisplayLabel.Name = "DisplayLabel"
-        Me.DisplayLabel.Size = New System.Drawing.Size(0, 13)
+        Me.DisplayLabel.Size = New System.Drawing.Size(105, 13)
         Me.DisplayLabel.TabIndex = 7
+        Me.DisplayLabel.Text = "No Current Selection"
         '
         'FilterGroupBox
         '
         Me.FilterGroupBox.Controls.Add(Me.FilterbyCategoryRadioButton)
         Me.FilterGroupBox.Controls.Add(Me.FilterbyAisleRadioButton)
-        Me.FilterGroupBox.Location = New System.Drawing.Point(529, 53)
+        Me.FilterGroupBox.Location = New System.Drawing.Point(42, 32)
         Me.FilterGroupBox.Name = "FilterGroupBox"
-        Me.FilterGroupBox.Size = New System.Drawing.Size(122, 73)
-        Me.FilterGroupBox.TabIndex = 8
+        Me.FilterGroupBox.Size = New System.Drawing.Size(136, 73)
+        Me.FilterGroupBox.TabIndex = 0
         Me.FilterGroupBox.TabStop = False
-        Me.FilterGroupBox.Text = "Filters"
+        Me.FilterGroupBox.Text = "Filter Type"
+        '
+        'FilterbyCategoryRadioButton
+        '
+        Me.FilterbyCategoryRadioButton.AutoSize = True
+        Me.FilterbyCategoryRadioButton.Location = New System.Drawing.Point(6, 42)
+        Me.FilterbyCategoryRadioButton.Name = "FilterbyCategoryRadioButton"
+        Me.FilterbyCategoryRadioButton.Size = New System.Drawing.Size(106, 17)
+        Me.FilterbyCategoryRadioButton.TabIndex = 1
+        Me.FilterbyCategoryRadioButton.Text = "Filter by Category"
+        Me.FilterbyCategoryRadioButton.UseVisualStyleBackColor = True
         '
         'FilterbyAisleRadioButton
         '
@@ -193,21 +206,11 @@ Partial Class MainForm
         Me.FilterbyAisleRadioButton.Text = "Filter by Aisle"
         Me.FilterbyAisleRadioButton.UseVisualStyleBackColor = True
         '
-        'FilterbyCategoryRadioButton
-        '
-        Me.FilterbyCategoryRadioButton.AutoSize = True
-        Me.FilterbyCategoryRadioButton.Location = New System.Drawing.Point(6, 42)
-        Me.FilterbyCategoryRadioButton.Name = "FilterbyCategoryRadioButton"
-        Me.FilterbyCategoryRadioButton.Size = New System.Drawing.Size(106, 17)
-        Me.FilterbyCategoryRadioButton.TabIndex = 1
-        Me.FilterbyCategoryRadioButton.Text = "Filter by Category"
-        Me.FilterbyCategoryRadioButton.UseVisualStyleBackColor = True
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(469, 157)
         Me.Controls.Add(Me.FilterGroupBox)
         Me.Controls.Add(Me.DisplayLabel)
         Me.Controls.Add(Me.DisplayListBox)
