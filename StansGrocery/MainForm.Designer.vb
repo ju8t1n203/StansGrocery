@@ -37,7 +37,7 @@ Partial Class MainForm
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.SearchLabel = New System.Windows.Forms.Label()
         Me.FilterComboBox = New System.Windows.Forms.ComboBox()
-        Me.FilterLabel = New System.Windows.Forms.Label()
+        Me.FiltersLabel = New System.Windows.Forms.Label()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.DisplayLabel = New System.Windows.Forms.Label()
@@ -58,7 +58,7 @@ Partial Class MainForm
         Me.TopMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.TopMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.TopMenuStrip.Name = "TopMenuStrip"
-        Me.TopMenuStrip.Size = New System.Drawing.Size(469, 24)
+        Me.TopMenuStrip.Size = New System.Drawing.Size(499, 24)
         Me.TopMenuStrip.TabIndex = 0
         Me.TopMenuStrip.Text = "TopMenuStrip"
         '
@@ -114,7 +114,7 @@ Partial Class MainForm
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(231, 29)
+        Me.SearchTextBox.Location = New System.Drawing.Point(241, 27)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(100, 20)
         Me.SearchTextBox.TabIndex = 2
@@ -122,7 +122,7 @@ Partial Class MainForm
         'SearchLabel
         '
         Me.SearchLabel.AutoSize = True
-        Me.SearchLabel.Location = New System.Drawing.Point(184, 32)
+        Me.SearchLabel.Location = New System.Drawing.Point(194, 30)
         Me.SearchLabel.Name = "SearchLabel"
         Me.SearchLabel.Size = New System.Drawing.Size(41, 13)
         Me.SearchLabel.TabIndex = 2
@@ -132,23 +132,23 @@ Partial Class MainForm
         '
         Me.FilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FilterComboBox.FormattingEnabled = True
-        Me.FilterComboBox.Location = New System.Drawing.Point(42, 111)
+        Me.FilterComboBox.Location = New System.Drawing.Point(52, 109)
         Me.FilterComboBox.Name = "FilterComboBox"
         Me.FilterComboBox.Size = New System.Drawing.Size(136, 21)
         Me.FilterComboBox.TabIndex = 1
         '
-        'FilterLabel
+        'FiltersLabel
         '
-        Me.FilterLabel.AutoSize = True
-        Me.FilterLabel.Location = New System.Drawing.Point(7, 114)
-        Me.FilterLabel.Name = "FilterLabel"
-        Me.FilterLabel.Size = New System.Drawing.Size(29, 13)
-        Me.FilterLabel.TabIndex = 4
-        Me.FilterLabel.Text = "Filter"
+        Me.FiltersLabel.AutoSize = True
+        Me.FiltersLabel.Location = New System.Drawing.Point(12, 112)
+        Me.FiltersLabel.Name = "FiltersLabel"
+        Me.FiltersLabel.Size = New System.Drawing.Size(34, 13)
+        Me.FiltersLabel.TabIndex = 4
+        Me.FiltersLabel.Text = "Filters"
         '
         'SearchButton
         '
-        Me.SearchButton.Location = New System.Drawing.Point(187, 108)
+        Me.SearchButton.Location = New System.Drawing.Point(197, 54)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(144, 35)
         Me.SearchButton.TabIndex = 3
@@ -158,16 +158,16 @@ Partial Class MainForm
         'DisplayListBox
         '
         Me.DisplayListBox.FormattingEnabled = True
-        Me.DisplayListBox.Location = New System.Drawing.Point(337, 29)
+        Me.DisplayListBox.Location = New System.Drawing.Point(347, 27)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(120, 95)
+        Me.DisplayListBox.Size = New System.Drawing.Size(140, 121)
         Me.DisplayListBox.TabIndex = 6
         Me.DisplayListBox.TabStop = False
         '
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(334, 127)
+        Me.DisplayLabel.Location = New System.Drawing.Point(212, 122)
         Me.DisplayLabel.Name = "DisplayLabel"
         Me.DisplayLabel.Size = New System.Drawing.Size(105, 13)
         Me.DisplayLabel.TabIndex = 7
@@ -177,7 +177,7 @@ Partial Class MainForm
         '
         Me.FilterGroupBox.Controls.Add(Me.FilterbyCategoryRadioButton)
         Me.FilterGroupBox.Controls.Add(Me.FilterbyAisleRadioButton)
-        Me.FilterGroupBox.Location = New System.Drawing.Point(42, 32)
+        Me.FilterGroupBox.Location = New System.Drawing.Point(52, 30)
         Me.FilterGroupBox.Name = "FilterGroupBox"
         Me.FilterGroupBox.Size = New System.Drawing.Size(136, 73)
         Me.FilterGroupBox.TabIndex = 0
@@ -210,12 +210,12 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(469, 157)
+        Me.ClientSize = New System.Drawing.Size(499, 157)
         Me.Controls.Add(Me.FilterGroupBox)
         Me.Controls.Add(Me.DisplayLabel)
         Me.Controls.Add(Me.DisplayListBox)
         Me.Controls.Add(Me.SearchButton)
-        Me.Controls.Add(Me.FilterLabel)
+        Me.Controls.Add(Me.FiltersLabel)
         Me.Controls.Add(Me.FilterComboBox)
         Me.Controls.Add(Me.SearchLabel)
         Me.Controls.Add(Me.SearchTextBox)
@@ -248,7 +248,7 @@ Partial Class MainForm
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents SearchLabel As Label
     Friend WithEvents FilterComboBox As ComboBox
-    Friend WithEvents FilterLabel As Label
+    Friend WithEvents FiltersLabel As Label
     Friend WithEvents SearchButton As Button
     Friend WithEvents DisplayListBox As ListBox
     Friend WithEvents DisplayLabel As Label
