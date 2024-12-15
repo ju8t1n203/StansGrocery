@@ -79,39 +79,57 @@ Public Class MainForm
         filteredInventory.Clear()
         DisplayListBox.Items.Clear()
 
+        Dim tempList As New List(Of String)
+
         For Each item As String In inventory
             Dim parts() As String = item.Split(","c)
 
             If parts.Length >= 3 Then
                 Dim aislePart As String = parts(1).Trim()
                 aislePart = aislePart.Replace("""", "").Trim()
+
                 'checks if the part contains the aisle
                 If aislePart = $"##LOC{aisle}" Then
                     'extracts and formats the item name
                     Dim itemName As String = parts(0).Replace("$$ITM", "").Trim()
                     itemName = itemName.Replace("""", "").Trim()
-                    DisplayListBox.Items.Add(itemName)
+
+                    tempList.Add(itemName)
+
                     filteredInventory.Add(item)
                 End If
             Else
             End If
         Next
+
+        'sorts then adds the alphabetical list 
+        tempList.Sort()
+
+        For Each itemName As String In tempList
+            DisplayListBox.Items.Add(itemName)
+        Next
     End Sub
-
-
 
     Private Sub FilterComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FilterComboBox.SelectedIndexChanged
-        Dim selectedCategory As String = FilterComboBox.SelectedItem.ToString()
-        FilterByCategory(selectedCategory)
+        Dim selectedOption As String = FilterComboBox.SelectedItem.ToString()
+
+        If FilterbyAisleRadioButton.Checked Then
+            FilterByAisle(selectedOption)
+        ElseIf FilterbyCategoryRadioButton.Checked Then
+            FilterByCategory(selectedOption)
+        End If
     End Sub
+
 
 
     Private Sub FilterbyAisleRadioButton_Click(sender As Object, e As EventArgs) Handles FilterbyAisleRadioButton.Click
         UpdateComboBox(aisleFilter)
+        DisplayListBox.Items.Clear()
     End Sub
 
     Private Sub FilterbyCategoryRadioButton_Click(sender As Object, e As EventArgs) Handles FilterbyCategoryRadioButton.Click
         UpdateComboBox(catagoryFilter)
+        DisplayListBox.Items.Clear()
     End Sub
 
     'menus--------------------------------
