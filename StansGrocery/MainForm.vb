@@ -120,8 +120,7 @@ Public Class MainForm
         End If
     End Sub
 
-
-
+    'radio buttons-----------------------
     Private Sub FilterbyAisleRadioButton_Click(sender As Object, e As EventArgs) Handles FilterbyAisleRadioButton.Click
         UpdateComboBox(aisleFilter)
         DisplayListBox.Items.Clear()
